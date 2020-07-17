@@ -1,109 +1,95 @@
-# The Cayman theme
+# 码志
 
-[![Build Status](https://travis-ci.org/pages-themes/cayman.svg?branch=master)](https://travis-ci.org/pages-themes/cayman) [![Gem Version](https://badge.fury.io/rb/jekyll-theme-cayman.svg)](https://badge.fury.io/rb/jekyll-theme-cayman)
+我的个人博客：<https://mazhuang.org>，欢迎 Star 和 Fork。
 
-*Cayman is a Jekyll theme for GitHub Pages. You can [preview the theme to see what it looks like](http://pages-themes.github.io/cayman), or even [use it today](#usage).*
+## 概览
 
-![Thumbnail of Cayman](thumbnail.png)
+<!-- vim-markdown-toc GFM -->
 
-## Usage
+* [效果预览](#效果预览)
+* [Fork 指南](#fork-指南)
+* [使用文档](#使用文档)
+* [经验与思考](#经验与思考)
+* [联系我](#联系我)
+* [致谢](#致谢)
 
-To use the Cayman theme:
+<!-- vim-markdown-toc -->
 
-1. Add the following to your site's `_config.yml`:
+## 效果预览
 
-    ```yml
-    theme: jekyll-theme-cayman
-    ```
+**[在线预览 &rarr;](https://mazhuang.org)**
 
-2. Optionally, if you'd like to preview your site on your computer, add the following to your site's `Gemfile`:
+![screenshot home](https://mazhuang.org/assets/images/screenshots/home.png)
 
-    ```ruby
-    gem "github-pages", group: :jekyll_plugins
-    ```
+## Fork 指南
 
-## Customizing
+Fork 本项目之后，还需要做一些事情才能让你的页面「正确」跑起来。
 
-### Configuration variables
+1. 正确设置项目名称与分支。
 
-Cayman will respect the following variables, if set in your site's `_config.yml`:
+   按照 GitHub Pages 的规定，名称为 `username.github.io` 的项目的 master 分支，或者其它名称的项目的 gh-pages 分支可以自动生成 GitHub Pages 页面。
 
-```yml
-title: [The title of your site]
-description: [A short description of your site's purpose]
-```
+2. 修改域名。
 
-Additionally, you may choose to set the following optional variables:
+   如果你需要绑定自己的域名，那么修改 CNAME 文件的内容；如果不需要绑定自己的域名，那么删掉 CNAME 文件。
 
-```yml
-show_downloads: ["true" or "false" to indicate whether to provide a download URL]
-google_analytics: [Your Google Analytics tracking ID]
-```
+3. 修改配置。
 
-### Stylesheet
+   网站的配置基本都集中在 \_config.yml 文件中，将其中与个人信息相关的部分替换成你自己的，比如网站的 url、title、subtitle 和第三方评论模块的配置等。
 
-If you'd like to add your own custom styles:
+   **评论模块：** 目前支持 disqus、gitment 和 gitalk，选用其中一种就可以了，推荐使用 gitalk。它们各自的配置指南链接在 \_config.yml 文件的 Comments 一节里都贴出来了。
 
-1. Create a file called `/assets/css/style.scss` in your site
-2. Add the following content to the top of the file, exactly as shown:
-    ```scss
-    ---
-    ---
+   **注意：** 如果使用 disqus，因为 disqus 处理用户名与域名白名单的策略存在缺陷，请一定将 disqus.username 修改成你自己的，否则请将该字段留空。我对该缺陷的记录见 [Issues#2][3]。
 
-    @import "{{ site.theme }}";
-    ```
-3. Add any custom CSS (or Sass, including imports) you'd like immediately after the `@import` line
+4. 删除我的文章与图片。
 
-*Note: If you'd like to change the theme's Sass variables, you must set new values before the `@import` line in your stylesheet.*
+   如下文件夹中除了 template.md 文件外，都可以全部删除，然后添加你自己的内容。
 
-### Layouts
+   * \_posts 文件夹中是我已发布的博客文章。
+   * \_drafts 文件夹中是我尚未发布的博客文章。
+   * \_wiki 文件夹中是我已发布的 wiki 页面。
+   * images 文件夹中是我的文章和页面里使用的图片。
 
-If you'd like to change the theme's HTML layout:
+5. 修改「关于」页面。
 
-1. [Copy the original template](https://github.com/pages-themes/cayman/blob/master/_layouts/default.html) from the theme's repository<br />(*Pro-tip: click "raw" to make copying easier*)
-2. Create a file called `/_layouts/default.html` in your site
-3. Paste the default layout content copied in the first step
-4. Customize the layout as you'd like
+   pages/about.md 文件内容对应网站的「关于」页面，里面的内容多为个人相关，将它们替换成你自己的信息，包括 \_data 目录下的 skills.yml 和 social.yml 文件里的数据。
 
-### Overriding GitHub-generated URLs
+## 使用文档
 
-Templates often rely on URLs supplied by GitHub such as links to your repository or links to download your project. If you'd like to override one or more default URLs:
+- [本博客模板常见问题 Q & A](https://mazhuang.org/2020/05/03/blog-template-qna/)。
 
-1. Look at [the template source](https://github.com/pages-themes/cayman/blob/master/_layouts/default.html) to determine the name of the variable. It will be in the form of `{{ site.github.zip_url }}`.
-2. Specify the URL that you'd like the template to use in your site's `_config.yml`. For example, if the variable was `site.github.url`, you'd add the following:
-    ```yml
-    github:
-      zip_url: http://example.com/download.zip
-      another_url: another value
-    ```
-3. When your site is built, Jekyll will use the URL you specified, rather than the default one provided by GitHub.
+- 在本地预览博客效果可以参考 [Setting up your Pages site locally with Jekyll][2]。
 
-*Note: You must remove the `site.` prefix, and each variable name (after the `github.`) should be indent with two space below `github:`.*
+## 经验与思考
 
-For more information, see [the Jekyll variables documentation](https://jekyllrb.com/docs/variables/).
+* 排版建议遵照一定的规范，推荐 [中文文案排版指北（简体中文版）][1]。
 
-## Roadmap
+* 简约，尽量每个页面都不展示多余的内容。
 
-See the [open issues](https://github.com/pages-themes/cayman/issues) for a list of proposed features (and known issues).
+* 有时一图抵千言，有时可能只会拖慢网页加载速度。
 
-## Project philosophy
+* 言之有物，不做无痛之呻吟。
 
-The Cayman theme is intended to make it quick and easy for GitHub Pages users to create their first (or 100th) website. The theme should meet the vast majority of users' needs out of the box, erring on the side of simplicity rather than flexibility, and provide users the opportunity to opt-in to additional complexity if they have specific needs or wish to further customize their experience (such as adding custom CSS or modifying the default layout). It should also look great, but that goes without saying.
+* 如果写技术文章，那先将技术原理完全理清了再开始写，一边摸索技术一边组织文章效率较低。
 
-## Contributing
+* 杜绝难断句、难理解的长句子，如果不能将其拆分成几个简洁的短句，说明脑中的理解并不清晰。
 
-Interested in contributing to Cayman? We'd love your help. Cayman is an open source project, built one contribution at a time by users like you. See [the CONTRIBUTING file](docs/CONTRIBUTING.md) for instructions on how to contribute.
+* 可以学习一下那些高质量的博主，他们的行文，内容组织方式，有什么值得借鉴的地方。
 
-### Previewing the theme locally
+## 联系我
 
-If you'd like to preview the theme locally (for example, in the process of proposing a change):
+如果对本博客模板或者内容有任何建议，可以通过 [Issues](https://github.com/mzlogin/mzlogin.github.io/issues) 或者微信公众号「闷骚的程序员」与我取得联系。
 
-1. Clone down the theme's repository (`git clone https://github.com/pages-themes/cayman`)
-2. `cd` into the theme's directory
-3. Run `script/bootstrap` to install the necessary dependencies
-4. Run `bundle exec jekyll serve` to start the preview server
-5. Visit [`localhost:4000`](http://localhost:4000) in your browser to preview the theme
+<img width="192px" height="192px" src="https://mazhuang.org/assets/images/qrcode.jpg"/>
 
-### Running tests
+## 致谢
 
-The theme contains a minimal test suite, to ensure a site with the theme would build successfully. To run the tests, simply run `script/cibuild`. You'll need to run `script/bootstrap` once before the test script will work.
+本博客外观基于 [DONGChuan](https://dongchuan.github.io) 修改，感谢！
+
+Thanks for JetBrains' support.
+
+<a href="https://www.jetbrains.com/?from=mzlogin.github.io"><img src="./assets/images/jetbrains.svg"/></a>
+
+[1]: https://github.com/mzlogin/chinese-copywriting-guidelines
+[2]: https://help.github.com/articles/setting-up-your-pages-site-locally-with-jekyll/
+[3]: https://github.com/mzlogin/mzlogin.github.io/issues/2
