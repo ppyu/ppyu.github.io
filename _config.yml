@@ -4,8 +4,8 @@
 baseurl:
 url: https://ppyu.github.io
 date_format: "ordinal"
-title: 
-subtitle: "公众号：NovaPeng"
+title: "Ppyu"
+subtitle: "Share for Study&Life"
 description: "Ppyu的个人博客，公众号：NovaPeng"
 keywords: 编程, 分享, GitHub, NovaPeng
 timezone: Asia/Shanghai
@@ -40,7 +40,7 @@ highlight_theme: github
 # ---------------- #
 author: Nova Peng  
 organization: UESTC.edu
-organization_url: 
+organization_url: https://www.uestc.edu.cn/
 github_username: ppyu
 location: ChengDu, China
 email: kopenbryant@gmail.com
