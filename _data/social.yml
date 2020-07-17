@@ -1,9 +1,9 @@
-- sitename: GitHub
-  name: ppyu
-  url: https://ppyu.github.io
-
 - sitename: 博客
   name: Ppyu
+  url: https://ppyu.github.io
+
+- sitename: GitHub
+  name: ppyu
   url: https://github.com/ppyu
 
 - sitename: 知乎

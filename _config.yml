@@ -5,7 +5,7 @@ baseurl:
 url: https://ppyu.github.io
 date_format: "ordinal"
 title: "Ppyu"
-subtitle: "Share for Study&Life"
+subtitle: "Share for Code&Life"
 description: "Ppyu的个人博客，公众号：NovaPeng"
 keywords: 编程, 分享, GitHub, NovaPeng
 timezone: Asia/Shanghai
