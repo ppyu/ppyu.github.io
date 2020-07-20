@@ -1,3 +1,13 @@
+---
+layout: post
+title: Tensorflow2.0学习笔记-fashion mnist数据的分类示例
+categories: Tensorflow
+description: 从tensoflow官网学习tensorflow2.0。
+keywords: 学习笔记, tensorflow
+---
+
+[源代码地址](https://github.com/ppyu/TF2.0Learn/blob/dev/fashion_mnist_classification.ipynb)
+
 ```python
 # Tensorflow and tf.keras
 import tensorflow as tf 
@@ -61,11 +71,11 @@ show_img_colorbar(test_images[0])
 ```
 
 
-![png](fashion_mnist_classification_files/fashion_mnist_classification_3_0.png)
+![png](../images/tensorflow2.0_learn/fashion_mnist_classification_files/fashion_mnist_classification_3_0.png)
 
 
 
-![png](fashion_mnist_classification_files/fashion_mnist_classification_3_1.png)
+![png](../images/tensorflow2.0_learn/fashion_mnist_classification_files/fashion_mnist_classification_3_1.png)
 
 
 
@@ -81,11 +91,11 @@ show_img_colorbar(test_images[0])
 ```
 
 
-![png](fashion_mnist_classification_files/fashion_mnist_classification_4_0.png)
+![png](../images/tensorflow2.0_learn/fashion_mnist_classification_files/fashion_mnist_classification_4_0.png)
 
 
 
-![png](fashion_mnist_classification_files/fashion_mnist_classification_4_1.png)
+![png](../images/tensorflow2.0_learn/fashion_mnist_classification_files/fashion_mnist_classification_4_1.png)
 
 
 
@@ -105,7 +115,7 @@ display_images(train_images,25,train_labels)
 ```
 
 
-![png](fashion_mnist_classification_files/fashion_mnist_classification_5_0.png)
+![png](../images/tensorflow2.0_learn/fashion_mnist_classification_files/fashion_mnist_classification_5_0.png)
 
 
 
@@ -294,7 +304,7 @@ plt.show()
 ```
 
 
-![png](fashion_mnist_classification_files/fashion_mnist_classification_13_0.png)
+![png](../images/tensorflow2.0_learn/fashion_mnist_classification_files/fashion_mnist_classification_13_0.png)
 
 
 
@@ -309,7 +319,7 @@ plt.show()
 ```
 
 
-![png](fashion_mnist_classification_files/fashion_mnist_classification_14_0.png)
+![png](../images/tensorflow2.0_learn/fashion_mnist_classification_files/fashion_mnist_classification_14_0.png)
 
 
 
@@ -330,7 +340,7 @@ plt.show()
 ```
 
 
-![png](fashion_mnist_classification_files/fashion_mnist_classification_15_0.png)
+![png](../images/tensorflow2.0_learn/fashion_mnist_classification_files/fashion_mnist_classification_15_0.png)
 
 
 
@@ -370,7 +380,7 @@ _ = plt.xticks(range(10), class_names, rotation=45)
 ```
 
 
-![png](fashion_mnist_classification_files/fashion_mnist_classification_19_0.png)
+![png](../images/tensorflow2.0_learn/fashion_mnist_classification_files/fashion_mnist_classification_19_0.png)
 
 
 
@@ -383,7 +393,3 @@ print("true_label:",test_labels[24])
     true_label: 1
     
 
-
-```python
-
-```
